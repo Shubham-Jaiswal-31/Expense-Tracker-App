@@ -2,24 +2,35 @@
 import './App.css';
 import Navbar from './components/Navbar.js';
 import HeroSection from './components/HeroSection.js';
+import AddExpenseForm from './components/AddExpenseForm.js'
+import ExpenseList from './ExpenseList';
 
-function App() {
+const App = () => {
+  const [expenses, setExpenses] = useState([]);
+
+  useEffect(() => {
+    const storedExpenses = JSON.parse(localStorage.getItem('expenses'));
+    if (storedExpenses) {
+      setExpenses(storedExpenses);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('expenses', JSON.stringify(expenses));
+  }, [expenses]);
+
   return (
     <div className="App">
       <Navbar />
-      <HeroSection />
       <div className="content">
         <section id="home">
-          <h1>Home</h1>
-          <p>Welcome to the Expense Tracker app!</p>
+          <HeroSection />
         </section>
         <section id="expenses">
-          <h1>Expenses List</h1>
-          <p>Here you can view your expenses.</p>
+          <ExpenseList expenses={expenses} setExpenses={setExpenses} />
         </section>
         <section id="add-expense">
-          <h1>Add Expense</h1>
-          <p>Add a new expense here.</p>
+          <AddExpenseForm />
         </section>
       </div>
     </div>

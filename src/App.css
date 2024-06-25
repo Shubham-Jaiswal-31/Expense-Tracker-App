@@ -43,16 +43,13 @@
   padding-top: 60px; 
 }
 
-.content {
-  padding: 20px;
-}
-
-section {
-  margin-bottom: 40px;
-}
-
 section h1 {
   margin-bottom: 10px;
+}
+
+#add-expense {
+  background-color: #fff8d8;
+  padding: 2rem;
 }
 
 

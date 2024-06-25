@@ -1,0 +1,53 @@
+.expense-form {
+    max-width: 30%;
+    margin: 2rem 35%;
+    padding: 0;
+    background-color: azure;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  }
+  
+  .expense-form h2 {
+    margin: 1rem 0;
+    color: bisque;
+    padding: 2%;
+    border-bottom: 1px solid;
+    background-color: #03AED2;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+  
+  .expense-form input,
+  .expense-form select {
+    width: 60%;
+    padding: 0.5rem;
+    margin: 1rem;
+    border: 2px solid gainsboro;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: #fdfff4;
+  }
+  
+  .expense-form button {
+    width: 40%;
+    padding: 0.75rem;
+    background-color: #03AED2;
+    color: bisque;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 4% 0;
+  }
+  
+  .expense-form button:disabled {
+    background-color: #7ae1ea;
+    cursor: not-allowed;
+  }
+  
+  .expense-form button:hover:not(:disabled) {
+    background-color: #02a1c1;
+    transform: scale(1.1);
+  }
+  

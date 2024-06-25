@@ -10,7 +10,7 @@ const HeroSection = () => {
         <button className="hero-button">Get Started</button>
       </div>
       <div className="hero-image">
-        <img src='./hero-image.png' alt='Expense Tracker Hero' />
+        <img src='./heroimg.png' alt='Expense Tracker Hero' />
       </div>
     </section>
   );
