@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Expense Tracker Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Expense Tracker web application! This app helps you track your expenses efficiently. You can add, edit, and delete expenses, filter them by category, and view the total expenses. The app is built with React and styled with CSS.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Add Expenses**: Easily add new expenses with descriptions, amounts, and categories.
+- **Edit Expenses**: Update your existing expenses as needed.
+- **Delete Expenses**: Remove any expense from your list.
+- **Filter by Category**: Filter the expenses list by category to see specific types of expenses.
+- **Responsive Design**: The app is optimized for both desktop and mobile devices.
+- **Persistent Storage**: Expenses are saved in local storage, so they persist even after refreshing the page.
 
-### `npm start`
+## Live Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Check out the deployed application [here](https://expense-tracker-0101.netlify.app/).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+Follow these instructions to download and run the app locally on your machine.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+Make sure you have the following software installed:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Node.js](https://nodejs.org/en/download/)
+- [npm](https://www.npmjs.com/get-npm) or [yarn](https://yarnpkg.com/getting-started/install)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
 
-### `npm run eject`
+  ```bash
+   git clone https://github.com/your-username/expense-tracker.git
+  ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Navigate to the project directory:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  ```bash
+  cd expense-tracker
+  ```
+3.Install the dependencies:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  ```bash
+    npm install
+  ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+or if you are using yarn:
+  ```bash
+    yarn install
+  ```
 
-## Learn More
+### Running the App
+To start the development server, run:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  ```bash
+    npm start
+  ```
+or if you are using yarn:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  ```bash
+    yarn start
+  ```
 
-### Code Splitting
+The app should now be running on http://localhost:3000.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Building the App
+To create a production build, run:
 
-### Analyzing the Bundle Size
+  ```bash
+    npm run build
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+or if you are using yarn:
 
-### Making a Progressive Web App
+  ```bash
+    yarn build
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The build output will be in the build directory.
 
-### Advanced Configuration
+### Deploying the App
+You can deploy the app to any static site hosting service. The app is currently deployed on Netlify.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Contributing
+Contributions are welcome! Feel free to open an issue or submit a pull request.
 
-### Deployment
+### License
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/Shubham-Jaiswal-31/Expense-Tracker-App/blob/main/LICENSE) file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Acknowledgements
+ - React
+ - react-router-dom
+ - Font Awesome
+ - Netlify
 
-### `npm run build` fails to minify
+<hr>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Happy expense tracking!
