@@ -56,7 +56,7 @@ const ExpenseList = ({ expenses, setExpenses }) => {
 		: expenses;
 
 	return (
-		<div className="expense-list">
+		<div className="expense-list" id="expense-list">
 			<h2>Expenses List</h2>
 			<div className="filter">
 				<label htmlFor="categoryFilter">Filter by Category:</label>

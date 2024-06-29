@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar.js";
 import Footer from "./components/Footer.js";
 import HeroSection from "./components/HeroSection.js";
 import AddExpenseForm from "./components/AddExpenseForm.js";
-import ExpenseList from "./components/ExpenseList";
+import ExpenseList from "./components/ExpenseList.js";
+import NotFound from "./components/NotFound.js";
 
 const App = () => {
 	const [expenses, setExpenses] = useState(() => {
@@ -24,21 +26,32 @@ const App = () => {
 	}, [expenses]);
 
 	return (
-		<div className="App">
-			<Navbar />
-			<div className="content">
-				<section id="home">
-					<HeroSection />
-				</section>
-				<section id="expenses">
-					<ExpenseList expenses={expenses} setExpenses={setExpenses} />
-				</section>
-				<section id="add-expense">
-					<AddExpenseForm expenses={expenses} setExpenses={setExpenses} />
-				</section>
+		<BrowserRouter>
+			<div className="App">
+				<Navbar />
+				<div className="content">
+					<Routes>
+						<Route path="/" element={<HeroSection />}></Route>
+						<Route
+							path="/track"
+							element={
+								<>
+									<AddExpenseForm
+										expenses={expenses}
+										setExpenses={setExpenses}
+									/>
+									,{" "}
+									<ExpenseList expenses={expenses} setExpenses={setExpenses} />
+								</>
+							}
+						></Route>
+
+						<Route path="*" element={<NotFound />}></Route>
+					</Routes>
+				</div>
+				<Footer />
 			</div>
-			<Footer />
-		</div>
+		</BrowserRouter>
 	);
 };
 

@@ -26,30 +26,32 @@ const AddExpenseForm = ({ expenses, setExpenses }) => {
 	const isFormValid = description && amount && category;
 
 	return (
-		<form className="expense-form" onSubmit={handleSubmit}>
-			<h2>Add Expense</h2>
-			<input
-				type="text"
-				placeholder="Description"
-				value={description}
-				onChange={(e) => setDescription(e.target.value)}
-			/>
-			<input
-				type="number"
-				placeholder="Amount"
-				value={amount}
-				onChange={(e) => setAmount(e.target.value)}
-			/>
-			<select value={category} onChange={(e) => setCategory(e.target.value)}>
-				<option value="">Select Category</option>
-				<option value="stationary">Stationary</option>
-				<option value="food">Food</option>
-				<option value="transport">Transport</option>
-			</select>
-			<button type="submit" disabled={!isFormValid}>
-				Add Expense
-			</button>
-		</form>
+		<div id="add-expense">
+			<form className="expense-form" onSubmit={handleSubmit}>
+				<h2>Add Expense</h2>
+				<input
+					type="text"
+					placeholder="Description"
+					value={description}
+					onChange={(e) => setDescription(e.target.value)}
+				/>
+				<input
+					type="number"
+					placeholder="Amount"
+					value={amount}
+					onChange={(e) => setAmount(e.target.value)}
+				/>
+				<select value={category} onChange={(e) => setCategory(e.target.value)}>
+					<option value="">Select Category</option>
+					<option value="stationary">Stationary</option>
+					<option value="food">Food</option>
+					<option value="transport">Transport</option>
+				</select>
+				<button type="submit" disabled={!isFormValid}>
+					Add Expense
+				</button>
+			</form>
+		</div>
 	);
 };
 

@@ -1,9 +1,10 @@
 .expense-list {
   width: 80%;
-  margin: 0 10%;
+  margin: 0 10% 5% 10%;
   background-color: azure;
   border-radius: 1%;
   box-shadow: 0 0 10px #0000001a;
+  border-bottom: 1px solid #0288a1;
 }
 
 .expense-list h2 {

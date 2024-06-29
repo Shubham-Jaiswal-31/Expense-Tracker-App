@@ -1,10 +1,11 @@
 .expense-form {
     width: 30%;
-    margin: 2rem 35%;
+    margin: 8% 35% 2% 35%;
     padding: 0;
     background-color: azure;
     border-radius: 1rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #0288a1;
   }
   
   .expense-form h2 {

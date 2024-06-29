@@ -2,9 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
     background-color: #fff8d8;
-    min-height: 80vh;
+    min-height: 74vh;
     position: relative;
   }
   

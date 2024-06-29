@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -8,9 +9,17 @@ const Navbar = () => {
 		setIsOpen(!isOpen);
 	};
 
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
+	const navigate = useNavigate();
+
+	const redirectHome = () => {
+		setIsOpen(false);
+		navigate("/");
+	}
+
+	const redirectToExpenses = () => {
+		setIsOpen(false);
+		navigate("/track");
+	}
 
 	return (
 		<nav className="navbar">
@@ -20,14 +29,14 @@ const Navbar = () => {
 					<p>Expense Tracker</p>
 				</div>
 				<div className={`nav-menu ${isOpen ? "active" : ""}`}>
-					<a href="#home" className="nav-link" onClick={closeMenu}>
+					<a href="#hero-section" className="nav-link" onClick={redirectHome}>
 						Home
 					</a>
-					<a href="#expenses" className="nav-link" onClick={closeMenu}>
-						Expenses List
-					</a>
-					<a href="#add-expense" className="nav-link" onClick={closeMenu}>
+					<a href="#top" className="nav-link" onClick={redirectToExpenses}>
 						Add Expense
+					</a>
+					<a href="#expense-list" className="nav-link" onClick={redirectToExpenses}>
+						Expenses List
 					</a>
 				</div>
 				<div className="nav-icon" onClick={toggleMenu}>
