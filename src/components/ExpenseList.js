@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './ExpenseList.css';
 
 const ExpenseList = ({ expenses, setExpenses }) => {
@@ -16,7 +16,7 @@ const ExpenseList = ({ expenses, setExpenses }) => {
 
   const handleSave = (index, updatedExpense) => {
     const updatedExpenses = expenses.map((expense, i) =>
-      i === index ? updatedExpense : expense
+      i === index ? { ...updatedExpense, date: new Date().toLocaleString() } : expense
     );
     setExpenses(updatedExpenses);
     setEditing(null);
@@ -44,29 +44,38 @@ const ExpenseList = ({ expenses, setExpenses }) => {
           <option value="transport">Transport</option>
         </select>
       </div>
-      <ul>
+      <div className="expense-grid">
+        <div className="expense-header">
+          <span>Description</span>
+          <span>Amount</span>
+          <span>Category</span>
+          <span>Date</span>
+          <span>Actions</span>
+        </div>
         {filteredExpenses.map((expense, index) => (
-          <li key={index}>
+          <div className="expense-item" key={index}>
             {editing === index ? (
               <ExpenseForm
                 expense={expense}
                 onSave={(updatedExpense) => handleSave(index, updatedExpense)}
               />
             ) : (
-              <div className="expense-item">
+              <>
                 <span>{expense.description}</span>
-                <span>{expense.amount}</span>
+                <span>₹{expense.amount}</span>
                 <span>{expense.category}</span>
                 <span>{expense.date}</span>
-                <button onClick={() => handleEdit(index)}>Edit</button>
-                <button onClick={() => handleDelete(index)}>Delete</button>
-              </div>
+                <div className="actions">
+                  <button onClick={() => handleEdit(index)}>Edit</button>
+                  <button onClick={() => handleDelete(index)}>Delete</button>
+                </div>
+              </>
             )}
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
       <div className="total-amount">
-        <h3>Total Expense: ${totalAmount.toFixed(2)}</h3>
+        <h3>Total Expense: ₹{totalAmount.toFixed(2)}</h3>
       </div>
     </div>
   );
@@ -75,14 +84,15 @@ const ExpenseList = ({ expenses, setExpenses }) => {
 const ExpenseForm = ({ expense, onSave }) => {
   const [description, setDescription] = useState(expense.description);
   const [amount, setAmount] = useState(expense.amount);
+  const [category, setCategory] = useState(expense.category);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSave({ ...expense, description, amount });
+    onSave({ ...expense, description, amount, category });
   };
 
   return (
-    <form onSubmit={handleSubmit} className="expense-form">
+    <form onSubmit={handleSubmit} className="expense-edit">
       <input
         type="text"
         value={description}
@@ -93,6 +103,12 @@ const ExpenseForm = ({ expense, onSave }) => {
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
       />
+      <select value={category} onChange={(e) => setCategory(e.target.value)}>
+        <option value="stationary">Stationary</option>
+        <option value="food">Food</option>
+        <option value="transport">Transport</option>
+      </select>
+      <div></div>
       <button type="submit">Save</button>
     </form>
   );

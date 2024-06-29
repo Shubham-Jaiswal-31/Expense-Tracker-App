@@ -1,33 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './AddExpenseForm.css';
 
-const AddExpenseForm = () => {
+const AddExpenseForm = ({ expenses, setExpenses }) => {
   const [description, setDescription] = useState('');
   const [amount, setAmount] = useState('');
   const [category, setCategory] = useState('');
-  const [expenses, setExpenses] = useState([]);
-
-  useEffect(() => {
-    const storedExpenses = JSON.parse(localStorage.getItem('expenses'));
-    if (storedExpenses) {
-      setExpenses(storedExpenses);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('expenses', JSON.stringify(expenses));
-  }, [expenses]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (description && amount && category) {
       const newExpense = {
         description,
-        amount,
+        amount: parseFloat(amount),
         category,
         date: new Date().toLocaleString()
       };
-      setExpenses([...expenses, newExpense]);
+      const updatedExpenses = [...expenses, newExpense];
+      setExpenses(updatedExpenses);
       setDescription('');
       setAmount('');
       setCategory('');

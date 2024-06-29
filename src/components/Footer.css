@@ -1,0 +1,39 @@
+footer {
+  background-color: #03AED2;
+  color: bisque;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  height: 10vh;
+}
+
+.social-media {
+  margin: 10px 0;
+}
+
+.social-media a {
+  display: inline-block;
+  margin: 0 10px;
+  color: aliceblue;
+  font-size: 24px;
+  transition: color 0.3s;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.social-media a:hover {
+  transform: scale(1.1);
+  background-color: #0288a1;
+}
+
+
+.footer-links a {
+  color: bisque;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #37372a;
+}

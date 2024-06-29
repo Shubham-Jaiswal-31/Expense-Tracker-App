@@ -52,6 +52,13 @@ section h1 {
   padding: 2rem;
 }
 
+#expenses {
+  background-color: #fff8d8;
+}
+
+.content {
+  background-color: #fff8d8;
+}
 
 /* 
 03AED2

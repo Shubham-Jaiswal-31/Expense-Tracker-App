@@ -1,5 +1,5 @@
 .expense-form {
-    max-width: 30%;
+    width: 30%;
     margin: 2rem 35%;
     padding: 0;
     background-color: azure;
@@ -49,5 +49,12 @@
   .expense-form button:hover:not(:disabled) {
     background-color: #02a1c1;
     transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    .expense-form {
+      width: 80%;
+      margin: 2rem 10%;
+    }
   }
   
