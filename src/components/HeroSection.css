@@ -10,6 +10,7 @@
   .hero-content {
     max-width: 50%;
     animation: fadeInLeft 1.5s ease-in-out;
+    margin-left: 4%;
   }
   
   .hero-content h1 {
@@ -42,6 +43,8 @@
   .hero-image {
     max-width: 50%;
     animation: fadeInRight 1.5s ease-in-out;
+    margin-top: 3%;
+    margin-right: 1%;
   }
   
   .hero-image img {

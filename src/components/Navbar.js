@@ -29,9 +29,9 @@ const Navbar = () => {
 					<p>Expense Tracker</p>
 				</div>
 				<div className={`nav-menu ${isOpen ? "active" : ""}`}>
-					<a href="#hero-section" className="nav-link" onClick={redirectHome}>
+					<p className="nav-link" onClick={redirectHome}>
 						Home
-					</a>
+					</p>
 					<a href="#top" className="nav-link" onClick={redirectToExpenses}>
 						Add Expense
 					</a>
